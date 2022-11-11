@@ -2,6 +2,8 @@
 
 - Automating DHCP Server configuration with Bash
 - Client Configuration is not mentioned here as it has to be done manually
+- As of now you have to manually install the DHCP package with </br>
+`sudo apt install isc-dhcp-server` </br>
 
 ### How to use?
 
