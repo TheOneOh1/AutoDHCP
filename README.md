@@ -1,9 +1,33 @@
 # AutoDHCP
 
-Automating DHCP Server configuration with Bash
+- Automating DHCP Server configuration with Bash
+- Client Configuration is not mentioned here as it has to be done manually
 
 ### How to use?
 
 - You can directly use the code or clone the repo
 
-``bash AutoDHCPilot.sh``
+  ``bash AutoDHCPilot.sh``
+
+- It will ask for details to that to be filled out by user and configuration will be automated
+  
+  1. Provide Domain Name
+  2. Provide Subnet (eg. 192.168.80.0)
+  3. Provide Option Routers (eg. 192.168.80.1)
+  4. Provide IP Pool with Starting and Ending IP address
+
+- At the end it will show which IP has been assigned yet.
+
+### Client Side
+
+- First check the network interface of client machine (eg. ens33, eth0)
+- Open the Interfaces file </br>
+`sudo nano /etc/network/interfaces` </br>
+  And enter the following details </br>
+   ```
+   auto <interface-name>
+   iface <interface-name>inet dhcp
+   ```
+- Once done restart the network or reboot the system </br>
+`systemctl restart networking` </br>
+`dhclient -4` </br>
