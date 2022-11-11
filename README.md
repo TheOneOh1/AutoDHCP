@@ -20,6 +20,10 @@
 
 - At the end it will show which IP has been assigned yet.
 
+### Output
+
+![](https://github.com/TheOneOh1/AutoDHCP/blob/main/carbon%20(1).png)
+
 ### Client Side
 
 - First check the network interface of client machine (eg. ens33, eth0)
