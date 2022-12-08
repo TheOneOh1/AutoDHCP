@@ -4,6 +4,18 @@ function main(){
 
     echo -e "\n*** DHCP Server Configuration ***\n"
 
+    which dhcpd &> /dev/null
+    if [ "$?" != "0" ];then
+        echo -e "DHCP Not Found!\n"
+        sleep 1s
+        echi "Wait, while we install the service for you."
+        apt install isc-dhcp-server -y &> /dev/null
+        echo "DHCP Service has been added."
+    else
+        echo "DHCP Exists, we will move on to Installation."
+    fi
+
+    sleep 2s
     read -p "Enter Domain name : " od
 
 
@@ -23,8 +35,9 @@ function main(){
     echo -e "\nsubnet $sub netmask $netmask { \noption routers	$option_r; \noption subnet-mask		$netmask; \noption domain-search	\"$od\";\noption domain-name-servers	$option_r; \nrange $ip_start $ip_end; \n}" >> /etc/dhcp/dhcpd.conf
 
     echo -e "\n\nInput has been registered"
-    start=$(systemctl restart isc-dhcp-server)
-    enable=$(systemctl enable isc-dhcp-server)
+    
+    systemctl restart isc-dhcp-server &> /dev/null
+    systemctl enable isc-dhcp-server &> /dev/null
 
     echo -e "\n $start $enable DHCP has been started and has been enabled successfully !!!"
 
