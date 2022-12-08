@@ -13,10 +13,10 @@
 
 - It will ask for details to that to be filled out by user and configuration will be automated
   
-  1. Provide Domain Name
-  2. Provide Subnet (eg. 192.168.80.0)
-  3. Provide Option Routers (eg. 192.168.80.1)
-  4. Provide IP Pool with Starting and Ending IP address
+  > - Provide Domain Name </br>
+  > - Provide Subnet (eg. 192.168.80.0) </br>
+  > - Provide Option Routers (eg. 192.168.80.1) </br>
+  > - Provide IP Pool with Starting and Ending IP address </br>
 
 - At the end it will show which IP has been assigned yet.
 
