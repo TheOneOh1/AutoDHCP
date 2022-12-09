@@ -41,10 +41,14 @@ function main(){
 
     echo -e "\n $start $enable DHCP has been started and has been enabled successfully !!!"
 
-    chk_ip
+    #chk_ip
 
 }
 
+main
+
+#Trying Check IP Allocation part, testing
+: '
 function chk_ip(){
 
     while true ;
@@ -70,5 +74,4 @@ function chk_ip(){
     done
 
 }
-
-main
+'
